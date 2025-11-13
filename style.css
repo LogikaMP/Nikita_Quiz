@@ -1,0 +1,350 @@
+/* 🔷 Основні стилі для сторінки */
+body {
+    background: radial-gradient(circle at center, #f0f4ff, #c3d3f5, #a2baf0);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: "Poppins", "Playfair Display", serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: bgMove 15s infinite alternate ease-in-out;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* 🔹 Анімація руху фону */
+@keyframes bgMove {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 50% 100%; }
+    100% { background-position: 100% 0%; }
+}
+
+/* 🔸 Математичний фон (формули, символи) */
+/* 🔸 Математичний фон (формули, символи) */
+body::before {
+    content: "∑ π √ Δ α β θ ≈ ∞ x² y³ → ← ≥ ≤ ± ∫ dx";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 150px;
+    /* ⬇️ Зміни кольору для яскравості */
+    color: rgba(255, 255, 255, 0.15);
+    font-family: "Cascadia Code", monospace;
+    pointer-events: none;
+    white-space: nowrap;
+    animation: floatMath 20s linear infinite;
+    /* ⬇️ Додаємо легке світіння */
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2),
+                 0 0 40px rgba(173, 216, 230, 0.3),
+                 0 0 60px rgba(100, 149, 237, 0.3);
+}
+
+
+@keyframes floatMath {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* 🟢 Кнопка старту */
+.btn-start {
+    width: 300px;
+    padding: 20px 40px;
+    border: 3px solid #1e3a8a;
+    border-radius: 15px;
+    font-size: 2em;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    cursor: pointer;
+    transition: 0.4s;
+    margin-top: 150px;
+    z-index: 5;
+}
+
+.btn-start:hover {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* 🧮 Сторінка тестування */
+.card-qw {
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+    align-items: center;
+    background: rgba(255,255,255,0.8);
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🔵 Текст запитання */
+.qw {
+    font-size: 36px;
+    text-align: center;
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.2);
+    color: #1e3a8a;
+    margin-bottom: 20px;
+}
+/* 🟦 Блок питання — фіксована ширина */
+.card-qw {
+    width: 70%; /* або фіксовано: 800px */
+    max-width: 900px;
+    min-width: 300px;
+    word-wrap: break-word; /* переносить довгі слова */
+    overflow-wrap: break-word;
+    text-align: center;
+}
+
+/* 🟦 Текст питання — перенос рядків */
+.qw {
+    font-size: 36px;
+    text-align: center;
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.2);
+    color: #1e3a8a;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    word-break: break-word; /* переносить довгі слова */
+    white-space: normal; /* дозволяє перенос рядків */
+}
+
+/* 🟣 Блок відповідей */
+.answers { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Кнопки відповідей */
+.ans {
+    background: linear-gradient(135deg, #ffffff, #e0e7ff);
+    border: 2px solid #1e40af;
+    border-radius: 12px;
+    padding: 15px 25px;
+    margin: 10px;
+    width: 50%;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1e3a8a;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.ans:hover {
+    background: linear-gradient(135deg, #3b82f6, #93c5fd);
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Ефект натискання */
+.ans:active {
+    transform: scale(0.98);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+/* Зображення запитання */
+.img {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.img img {
+    width: 100%;
+    transition: transform 0.6s ease;
+}
+
+.img:hover img {
+    transform: scale(1.1);
+}
+
+/* 🧾 Вікно результату */
+.result {
+    width: 80%;
+    max-width: 900px;
+    margin: 100px auto;
+    padding: 40px 60px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #fdf4e3, #7ac3c0, #8369b6, #b04ba5);
+    background-size: 400% 400%;
+    animation: gradientFlow 12s ease infinite;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    text-align: center;
+    font-family: "Poppins", cursive;
+    font-weight: 600;
+    font-size: 1.4em;
+    font-style: normal;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* проміжок між блоками */
+    flex-wrap: wrap; /* на мобільних рядок переноситься */
+}
+
+/* === Показник правильних відповідей === */
+.result .score {
+    font-size: 4em;
+    color: #7ac3c0;
+    text-shadow:
+        2px 2px 0 #8369b6,
+        4px 4px 0 #b04ba5,
+        6px 6px 12px rgba(0,0,0,0.5);
+}
+
+/* === Загальна кількість запитань === */
+.result .total {
+    font-size: 3em;
+    color: #fdf4e3;
+    text-shadow:
+        1px 1px 0 #8369b6,
+        2px 2px 0 #b04ba5,
+        3px 3px 8px rgba(0,0,0,0.4);
+}
+
+/* === Блок статистики (stats) === */
+.stats {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* по центру екрану */
+    align-items: center;
+    flex-wrap: wrap; /* перенос рядків на маленьких екранах */
+    gap: 20px; /* проміжок між блоками */
+    margin-top: 30px;
+    flex-direction: column;
+}
+
+/* === Анімація появи результату === */
+.result, .result .score, .result .total {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+/* Плавне поява елементів */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === Градієнт анімація === */
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .result {
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+
+    .result .score {
+        font-size: 3em;
+    }
+
+    .result .total {
+        font-size: 2.5em;
+    }
+}
+/* === СЕКЦІЯ ПРО МАТЕМАТИЧНИЙ ТЕКСТ === */
+/* === СЕКЦІЯ ПРО МАТЕМАТИЧНИЙ ТЕКСТ === */
+.about {
+  width: 80%;
+  margin: 100px auto;
+  padding: 50px 70px;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #fdf4e3, #7ac3c0, #8369b6, #b04ba5);
+  background-size: 400% 400%;
+  animation: gradientFlow 12s ease infinite;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  color: #fff;
+  font-family: "Playwrite DE Grund", cursive;
+  font-weight: 400;
+  font-style: italic;
+  text-align: center;
+  letter-spacing: 1px;
+  transform-style: preserve-3d;
+}
+
+/* === ЗАГОЛОВОК === */
+.about h1 {
+  font-size: 3.8em;
+  margin-bottom: 40px;
+  color: #fdf4e3;
+  letter-spacing: 2px;
+  text-shadow:
+    2px 2px 0 #8369b6,
+    4px 4px 0 #b04ba5,
+    6px 6px 8px rgba(0,0,0,0.4);
+  transform: translateZ(20px);
+}
+
+/* === ТЕКСТ === */
+.about p {
+  font-size: 1.5em;
+  line-height: 1.9;
+  color: #ffffff;
+  text-shadow:
+    1px 1px 0 #8369b6,
+    2px 2px 0 #b04ba5,
+    3px 3px 6px rgba(0,0,0,0.5);
+  transform: translateZ(15px);
+}
+
+/* === Анімація градієнта === */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.book{
+    display: none;
+    position: absolute;
+    top : 1000px; 
+}
+
+/* 🟢 Повідомлення про результат відповіді */
+.res_text {
+    margin-top: 30px;
+    padding: 20px 40px;
+    border-radius: 15px;
+    font-size: 1em;
+    font-weight: 6;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    z-index: 10;
+    position: absolute;
+    opacity: 0;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    top:250px;
+}
+
+
+
+
