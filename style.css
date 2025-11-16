@@ -344,6 +344,28 @@ body::before {
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
     top:250px;
 }
+/* Стилі кнопки Restart */
+.restart {
+    display: inline-block;
+    margin-top: 50px;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    background: linear-gradient(135deg, #7e5aff, #c77dff);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.restart:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
 
 
 

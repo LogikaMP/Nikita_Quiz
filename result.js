@@ -6,7 +6,32 @@
 // перебираємо елементи
 // розбиваємо елемент на ключ і значення
 // якщо ключ - score, записуємо значення в змінну score
-// якщо ключ - total, записуємо значення в змінну total
+// якщо ключ - total, записуємо значення в змінну total 
+  
+
+// Кнопка рестарту
+const restartBtn = document.querySelector('.restart');
+
+restartBtn.addEventListener('click', () => {
+    // Анімація кнопки при натисканні
+    anime({
+        targets: restartBtn,
+        scale: [1, 1.2, 1],
+        duration: 500,
+        easing: 'easeInOutQuad'
+    });
+
+    // Перезавантаження сторінки після анімації
+    setTimeout(() => {
+        window.location.replace("test.html")
+    }, 500);
+});
+
+
+
+
+
+
 let score = document.querySelector(".score")
 let total = document.querySelector(".total")
 let cookie = document.cookie.split(";")
@@ -69,3 +94,4 @@ window.onload = function(){
             // анімація кількості правильних відповідей по завершенню анімації total
 
 }
+
